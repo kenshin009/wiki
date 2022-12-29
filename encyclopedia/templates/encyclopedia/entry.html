@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ entry_title|upper }}
+{% endblock %}
+
+{% block body %}
+
+    {% if entry_content %}
+    
+        {{ entry_content|safe }}
+       
+    {% endif %}
+    <button><a href="{% url 'encyclopedia:edit' entry_title %}" style="text-decoration: none;">Edit</a></button>
+{% endblock %}
