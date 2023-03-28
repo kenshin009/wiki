@@ -9,8 +9,11 @@ from random import choice
 
 
 def index(request):
+    # Get the list of all entry names
+    entries = util.list_entries()
+
     return render(request, "encyclopedia/index.html", {
-        "entries":util.list_entries()
+        "entries": entries,
     })
 
 def entry(request,title):
